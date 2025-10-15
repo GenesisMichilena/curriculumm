@@ -1,0 +1,318 @@
+/* Variables CSS para una paleta de colores consistente */
+:root {
+    --color-primary: #FF69B4; /* Rosa Chicle */
+    --color-secondary: #FFC0CB; /* Rosa Pálido */
+    --color-text-dark: #333333;
+    --color-text-light: #666666;
+    --color-background-light: #FDF4F8; 
+    --color-border: #FFDDEE; 
+    --color-accent: #DA70D6; /* Orquídea */
+    --color-nav-bg: rgba(255, 105, 180, 0.95);
+    --color-nav-hover: #ffffff; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    margin: 0;
+    padding-top: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 900px;
+    width: 100%;
+    background: linear-gradient(145deg, #ffffff, #fefefe); 
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- ENCABEZADO Y FOTO --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+header h1 {
+    color: var(--color-primary);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px var(--color-secondary); 
+}
+
+header img {
+    border-radius: 50%;
+    border: 5px solid var(--color-primary); 
+    margin-top: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out;
+}
+header img:hover {
+    transform: scale(1.05) rotate(3deg); 
+}
+
+/* --- ACTIVIDAD 1: FLEXBOX (NAVEGACIÓN) --- */
+nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-nav-bg); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000; 
+    padding: 10px 0;
+}
+
+nav ul {
+    /* Activa el modelo de diseño Flexbox*/
+    display: flex;
+
+    /* Distribuye los elementos con espacio igual entre ellos */
+    justify-content: space-between;
+
+    /* Organiza los elementos en una fila horizontal de izquierda a derecha */
+    flex-direction: row;
+
+    /* Centra verticalmente los elementos dentro del contenedor */
+    align-items: center;
+
+    /* Establece un espacio uniforme de 1rem entre cada elemento */
+    gap: 1rem;
+    
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; 
+    max-width: 900px; 
+}
+
+nav li {
+    margin: 5px 0; 
+    padding: 8px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-nav-hover); 
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--color-accent); 
+    color: white;
+}
+/* --- FIN FLEXBOX (NAVEGACIÓN) --- */
+
+
+h2 {
+    color: var(--color-primary);
+    font-size: 2.2em;
+    border-bottom: 3px solid var(--color-secondary);
+    padding-bottom: 10px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: var(--color-accent);
+    font-size: 1.6em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--color-accent);
+    padding-left: 10px;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--color-secondary);
+    margin: 40px 0;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+/* --- ACTIVIDAD 3: FLEX VS GRID (REFERENCIAS) - USANDO GRID PARA LA ESTRUCTURA --- */
+#referencias {
+     /* Activa el modelo basado en cuadrícula */
+     display: grid;
+
+     /* Define 3 columnas de igual ancho */
+     grid-template-columns: repeat(3, 1fr);
+
+     /* Espaciado uniforme */
+     gap: 1rem;
+
+     /* Estilo general para la sección de referencias */
+     padding: 15px 0;
+     border-top: 1px solid var(--color-border);
+}
+
+#referencias > h2 {
+     /* Hace que el subtítulo ocupe las 3 columnas */
+     grid-column: 1 / span 3;
+     margin-bottom: 20px;
+     text-align: left;
+}
+
+.testimonio {
+    /* Estilo limpio para cada artículo de referencia */
+    margin: 0; /* Quitamos el margin para que Grid lo maneje */
+    padding: 15px;
+    border: 1px solid var(--color-border); 
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.testimonio:hover {
+    background-color: var(--color-background-light); 
+}
+
+.testimonio figure {
+    margin: 0;
+    padding: 0;
+}
+
+.testimonio blockquote {
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-secondary); 
+    font-style: italic;
+    font-size: 1em;
+    color: var(--color-text-dark);
+}
+
+.testimonio .quote {
+    position: relative;
+    padding-left: 0; 
+}
+
+.testimonio .quote::before {
+    content: none; /* ELIMINAMOS las comillas gigantes que molestaban */
+}
+
+.testimonio figcaption {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    padding-top: 5px;
+}
+
+.testimonio figcaption p strong {
+    color: var(--color-accent); 
+}
+/* --- FIN REFERENCIAS LIMPIAS (GRID) --- */
+
+
+/* Estilos de lista y tabla */
+ul, ol {
+    margin-left: 25px;
+    padding: 0;
+}
+ul li, ol li {
+    margin-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+th, td {
+    border: 1px solid var(--color-border);
+    padding: 10px 15px;
+    text-align: left;
+}
+th {
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+/* --- ACTIVIDAD 2: GRID (FORMULARIO) --- */
+#contacto > form {
+    
+    /* Activa el modelo de diseño basado en cuadrícula */
+    display: grid;
+
+    /* Define una sola columna que ocupa todo el ancho disponible del contenedor */
+    grid-template-columns: 1fr;
+
+    /* Establece un espacio uniforme de 1rem entre cada elemento (filas y columnas) */
+    gap: 1rem;
+
+    /* Estilos generales del formulario */
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#contacto form label {
+    font-weight: bold;
+    margin-bottom: 0; /* Quitamos el margin-bottom de label para que el gap lo maneje */
+    color: var(--color-text-dark);
+}
+
+#contacto form input[type="text"],
+#contacto form select,
+#contacto form textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--color-background-light);
+}
+
+#contacto form fieldset {
+    border: 1px solid var(--color-border);
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+#contacto form legend {
+    font-weight: bold;
+    color: var(--color-accent);
+    padding: 0 5px;
+}
+
+#contacto form button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contacto form button:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+}
